@@ -4,7 +4,7 @@ function createCells() {
   // cell.style.height = "100px";
   // cell.style.backgroundColor = "red";
   cell.classList.add('cell');
-  cell.addEventListener('click', function () {
+  cell.addEventListener('mouseenter', function () {
     tryThis(cell);
   });
   return cell;
@@ -15,8 +15,7 @@ for (let i = 0; i < 16 * 16; i++) {
   grid.appendChild(createCells());
 }
 
-function tryThis(e) {
-  console.log('hey');
-  return e.style.color = "black";
+function tryThis(cell) {
+  cell.style.backgroundColor = "black";
 }
 
