@@ -1,3 +1,5 @@
+let size = 16;
+
 function createCells() {
   let cell = document.createElement('div');
   // cell.style.width = "100px";
@@ -5,17 +7,29 @@ function createCells() {
   // cell.style.backgroundColor = "red";
   cell.classList.add('cell');
   cell.addEventListener('mouseenter', function () {
-    tryThis(cell);
+    draw(cell);
   });
   return cell;
 }
 
 const grid = document.querySelector('#grid');
-for (let i = 0; i < 16 * 16; i++) {
+for (let i = 0; i < size * size; i++) {
   grid.appendChild(createCells());
 }
 
-function tryThis(cell) {
-  cell.style.backgroundColor = "black";
+function draw(e) {
+  e.style.backgroundColor = "black";
 }
 
+function clearCells() {
+  console.log('wut');
+  let cell = document.getElementsByClassName('cell');
+  for (let i = 0; i < size * size; i++) {
+    cell[i].style.backgroundColor = 'red';
+  }
+}
+
+const btn = document.querySelector('button');
+btn.addEventListener('click', function () {
+  clearCells();
+});
