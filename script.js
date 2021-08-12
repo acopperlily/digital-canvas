@@ -29,7 +29,13 @@ function clearCells() {
   }
 }
 
+function getSize() {
+  let size = parseInt(prompt('Enter size of new grid: '));
+  return size;
+}
+
 const btn = document.querySelector('button');
 btn.addEventListener('click', function () {
   clearCells();
 });
+
