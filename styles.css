@@ -6,16 +6,15 @@
 
 #grid {
   display: grid;
-  width: 100%;
-  grid-template-columns: repeat(16, auto);
-  justify-content: center;
+  margin: 2rem;
+  width: 500px;
+  height: 500px;
+
   border: 1px solid green;
 }
 
 .cell {
   background-color: red;
-  width: 20px;
-  height: 20px;
   border: 1px solid blue;
 }
 

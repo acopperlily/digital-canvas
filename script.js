@@ -2,9 +2,6 @@ let size = 16;
 
 function createCells() {
   let cell = document.createElement('div');
-  // cell.style.width = "100px";
-  // cell.style.height = "100px";
-  // cell.style.backgroundColor = "red";
   cell.classList.add('cell');
   cell.addEventListener('mouseenter', function () {
     draw(cell);
@@ -16,6 +13,8 @@ const grid = document.querySelector('#grid');
 for (let i = 0; i < size * size; i++) {
   grid.appendChild(createCells());
 }
+
+grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
 
 function draw(e) {
   e.style.backgroundColor = "black";
