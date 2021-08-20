@@ -9,13 +9,10 @@
   margin: 2rem;
   width: 500px;
   height: 500px;
-
-  border: 1px solid green;
 }
 
 .cell {
-  background-color: red;
+  background-color: rgb(240, 240, 240);
   opacity: 1.0;
-  border: 1px solid blue;
 }
 
