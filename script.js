@@ -1,4 +1,4 @@
-let size = 36;
+let size = 16;
 
 function createCells() {
   let cell = document.createElement('div');
@@ -25,6 +25,13 @@ function newGrid(grid, size) {
 
 function draw(e) {
   e.style.backgroundColor = "black";
+  let opacity = getComputedStyle(e).opacity;
+  if (opacity == '1') {
+    e.style.opacity = '0.09';
+  } else if (opacity < '0.99') {
+    e.style.opacity = parseFloat(opacity) + 0.09;
+  }
+  // console.log(opacity);
 }
 
 function clearCells() {

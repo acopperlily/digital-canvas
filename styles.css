@@ -15,6 +15,7 @@
 
 .cell {
   background-color: red;
+  opacity: 1.0;
   border: 1px solid blue;
 }
 
