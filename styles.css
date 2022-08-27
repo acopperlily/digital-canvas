@@ -23,8 +23,8 @@ h1 {
   background-color: white;
   display: grid;
   margin: 1rem auto;
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
 }
 
 .cell {
@@ -39,8 +39,10 @@ button {
   height: 30px;
   cursor: pointer;
   background-color: gray;
+  color: black;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
+  letter-spacing: .1ch;
   font-weight: 600;
 }
 
