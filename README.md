@@ -3,7 +3,7 @@ Modeled after a popular childhood toy, users employ simple mouse movements to tr
 
 **Link to project:** https://acopperlily.github.io/digital-canvas/
 
-![alt text](https://imgur.com/a/XzJKVq8)
+![alt text](https://github.com/acopperlily/digital-canvas/blob/main/preview.png?raw=true)
 
 ## How It's Made:
 
@@ -22,4 +22,4 @@ I learned how to use simple math to both build the grid and implement the color 
 ## Examples:
 Take a look at this example that I have in my own portfolio:
 
-**Happy Hour Cocktails:** https://github.com/alecortega/palettable
+**Happy Hour Cocktails:** https://acopperlily.github.io/happy-hour-cocktails/
