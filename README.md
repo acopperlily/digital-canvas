@@ -13,7 +13,7 @@ The grid is made up of tiny divs that change to a slightly darker shade of gray 
 
 ## Optimizations
 
-Instead of an alert, I'd like to build a spinner or a range slider to change the size of the grid.
+Instead of shades of gray, I would love to implement the ability to change the color of the canvas.
 
 ## Lessons Learned
 

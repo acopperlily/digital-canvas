@@ -1,4 +1,8 @@
-let size = 16;
+const slider = document.getElementById('slider');
+let size = slider.value;
+
+const currentSize = document.querySelector('.current-size');
+currentSize.textContent = `Current size: ${slider.value}`;
 
 function createCells() {
   let cell = document.createElement('div');
@@ -31,7 +35,6 @@ function draw(e) {
   } else if (opacity < '0.99') {
     e.style.opacity = parseFloat(opacity) + 0.09;
   }
-  // console.log(opacity);
 }
 
 function clearCells() {
@@ -47,16 +50,10 @@ function deleteCells() {
   }
 }
 
-function getSize() {
-  let size = parseInt(prompt('Enter size of new grid: '));
-  return size;
-}
-
-const btn = document.querySelector('button');
-btn.addEventListener('click', function () {
+slider.oninput = () => {
   clearCells();
   deleteCells();
-  size = getSize();
+  size = slider.value;
+  currentSize.textContent = `Current size: ${slider.value}`
   newGrid(grid, size);
-});
-
+};
