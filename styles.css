@@ -6,8 +6,7 @@
 
 body {
   background-color: black;
-  /* width: 100%; */
-  height: 100vh;
+  min-height: 100vh;
   font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-direction: column;
@@ -15,9 +14,12 @@ body {
   align-items: center;
 }
 
+header {
+  padding: 2rem;
+}
+
 h1 {
   text-align: center;
-  padding-top: 1rem;
   color: rgb(219, 216, 216);
   text-transform: uppercase;
   font-weight: 500;
@@ -27,9 +29,9 @@ h1 {
 #grid {
   background-color: white;
   display: grid;
-  margin: 1rem auto;
-  width: 400px;
-  height: 400px;
+  width: 250px;
+  height: 250px;
+  margin-bottom: 2rem;
 }
 
 .cell {
@@ -40,14 +42,15 @@ h1 {
 button {
   display: block;
   margin: 0 auto;
-  width: 90px;
-  height: 30px;
+  width: 120px;
+  height: 40px;
   cursor: pointer;
-  background-color: gray;
+  background-color: rgb(158, 156, 156);
   color: black;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: .1ch;
+  font-size: 1rem;
   font-weight: 600;
   border: none;
 }
@@ -58,10 +61,8 @@ button:hover {
 
 footer {
   color: rgb(219, 216, 216);
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  padding: 1rem;
+  padding: 0.6rem;
+  font-size: 0.8rem;
 }
 
 a {
@@ -71,5 +72,38 @@ a {
 }
 
 .links {
+  padding-top: 0.6rem;
   font-size: 1.2rem;
+  text-align: center;
+}
+
+@media (min-width: 390px) {
+  #grid {
+    width: 360px;
+    height: 360px;
+  }
+}
+
+@media (min-width: 600px) {
+  #grid {
+    width: 500px;
+    height: 500px;
+  }
+
+  footer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .links {
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 800px) {
+  #grid {
+    width: 600px;
+    height: 600px;
+  }
 }
