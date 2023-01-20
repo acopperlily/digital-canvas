@@ -2,7 +2,7 @@ const slider = document.getElementById('slider');
 let size = slider.value;
 
 const currentSize = document.querySelector('.current-size');
-currentSize.textContent = `Current size: ${slider.value}`;
+currentSize.textContent = `${slider.value} x ${slider.value}`;
 
 function createCells() {
   let cell = document.createElement('div');
@@ -54,6 +54,6 @@ slider.oninput = () => {
   clearCells();
   deleteCells();
   size = slider.value;
-  currentSize.textContent = `Current size: ${slider.value}`
+  currentSize.textContent = `${slider.value} x ${slider.value}`
   newGrid(grid, size);
 };

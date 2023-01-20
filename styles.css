@@ -6,32 +6,36 @@
 
 body {
   background-color: black;
+  color: rgb(219, 216, 216);
   min-height: 100vh;
+
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  text-transform: uppercase;
 }
 
 header {
-  padding-top: 2rem;
+  padding: 2rem 3rem;
 }
 
 h1 {
-  text-align: center;
-  color: rgb(219, 216, 216);
+  font-size: 2rem;
   font-weight: 500;
-  letter-spacing: .5ch;
+  letter-spacing: 0.5ch;
+  line-height: 2.5rem;
 }
 
 #grid {
   background-color: white;
-  display: grid;
   width: 250px;
   height: 250px;
   margin-bottom: 3rem;
+  display: grid;
 }
 
 .cell {
@@ -40,13 +44,13 @@ h1 {
 }
 
 #controls {
+  font-size: 0.8rem;
+  letter-spacing: 0.1ch;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.8rem;
-  color: rgb(219, 216, 216);
-  font-size: 0.8rem;
-  letter-spacing: 0.1ch;
+  gap: 1rem;
 }
 
 .slide-container {
@@ -79,7 +83,7 @@ h1 {
 }
 
 #slider::-moz-range-thumb {
-  /* appearance: none; */
+  appearance: none;
   background: white;
   width: 1rem;
   height: 1rem;
@@ -87,16 +91,27 @@ h1 {
 }
 
 footer {
-  color: rgb(219, 216, 216);
-  padding: 0.6rem;
+  margin-top: 2rem;
+  height: 5rem;
+  padding: 1rem;
   font-size: 0.8rem;
-  text-transform: capitalize;
+}
+
+span {
+  padding-right: 3px;
+  opacity: 0.7;
 }
 
 a {
   color: rgb(219, 216, 216);
   text-decoration: none;
   padding-right: 0.7rem;
+  opacity: 0.7;
+}
+
+a:hover {
+  color: white;
+  opacity: 1;
 }
 
 .links {
@@ -105,28 +120,38 @@ a {
   text-align: center;
 }
 
-@media (min-width: 390px) {
+@media (min-width: 360px) {
   #grid {
-    width: 360px;
-    height: 360px;
+    width: 340px;
+    height: 340px;
   }
 }
 
 @media (min-width: 600px) {
+  h1 {
+    font-size: 2.1rem;
+  }
+
   #grid {
     width: 500px;
     height: 500px;
   }
 
   #controls {
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     font-size: 0.9rem;
-    gap: 1rem;
   }
 
   .slide-container {
-    width: 30%;
+    width: 25%;
+    flex-grow: 2;
+  }
+
+  .current-size {
+    flex-grow: 2;
+    text-align: right;
   }
 
   footer {
@@ -141,12 +166,17 @@ a {
 }
 
 @media (min-width: 800px) {
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+
   #grid {
     width: 600px;
     height: 600px;
   }
 
   .slide-container {
-    width: 40%;
+    width: 35%;
   }
 }
