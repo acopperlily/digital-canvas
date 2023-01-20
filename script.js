@@ -13,9 +13,9 @@ function createCells() {
   cell.addEventListener('click', function () {
     draw(cell);
   });
-  cell.addEventListener('touchmove', function () {
-    draw(cell);
-  });
+  // cell.addEventListener('touchmove', function () {
+  //   draw(cell);
+  // });
   return cell;
 }
 
