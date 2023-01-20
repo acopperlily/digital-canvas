@@ -35,6 +35,8 @@ h1 {
   width: 250px;
   height: 250px;
   margin-bottom: 3rem;
+  touch-action: manipulation;
+  cursor: pointer;
   display: grid;
 }
 
@@ -110,7 +112,6 @@ a {
 }
 
 a:hover {
-  color: white;
   opacity: 1;
 }
 
@@ -118,6 +119,16 @@ a:hover {
   padding-top: 0.6rem;
   font-size: 1.2rem;
   text-align: center;
+}
+
+#grid::selection {
+  background: none;
+  color: none;
+}
+
+#grid::-moz-selection {
+  background: none;
+  color: none;
 }
 
 @media (min-width: 360px) {

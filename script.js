@@ -10,6 +10,9 @@ function createCells() {
   cell.addEventListener('mouseenter', function () {
     draw(cell);
   });
+  cell.addEventListener('click', function () {
+    draw(cell);
+  });
   return cell;
 }
 
