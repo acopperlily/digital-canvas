@@ -13,9 +13,6 @@ function createCells() {
   cell.addEventListener('click', function () {
     draw(cell);
   });
-  // cell.addEventListener('touchmove', function () {
-  //   draw(cell);
-  // });
   return cell;
 }
 
@@ -37,16 +34,9 @@ function draw(e) {
   e.style.backgroundColor = "black";
   let opacity = getComputedStyle(e).opacity;
   if (opacity == '1') {
-    e.style.opacity = '0.09';
-  } else if (opacity < '0.99') {
-    e.style.opacity = parseFloat(opacity) + 0.09;
-  }
-}
-
-function clearCells() {
-  let cell = document.getElementsByClassName('cell');
-  for (let i = 0; i < size * size; i++) {
-    cell[i].style.backgroundColor = 'red';
+    e.style.opacity = '0';
+  } else {
+    e.style.opacity = parseFloat(opacity) + 0.1;
   }
 }
 
@@ -56,8 +46,13 @@ function deleteCells() {
   }
 }
 
+const clearBtn = document.querySelector('button');
+clearBtn.addEventListener('click', () => {
+  deleteCells();
+  newGrid(grid, size);
+});
+
 slider.oninput = () => {
-  clearCells();
   deleteCells();
   size = slider.value;
   currentSize.textContent = `${slider.value} x ${slider.value}`

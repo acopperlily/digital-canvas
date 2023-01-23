@@ -1,5 +1,5 @@
 # Digital Canvas
-Modeled after a popular childhood toy, users employ simple mouse movements to transform a plain grid into a dazzling work of art.
+Modeled after a popular childhood toy, users employ simple mouse movements or taps to transform a plain white canvas into a dazzling work of art.
 
 **Link to project:** https://acopperlily.github.io/digital-canvas/
 
@@ -9,15 +9,15 @@ Modeled after a popular childhood toy, users employ simple mouse movements to tr
 
 **Tech used:** HTML, CSS, JavaScript
 
-The grid is made up of tiny divs that change to a slightly darker shade of gray until it is entirely black.
+With either the tap of a finger or the movement of the cursor, the cells turn darker and darker until completely black. Then the cells reset to white, and the process begins all over again. The size of the cells is adjustable via the slider, and you can reset the canvas by clicking the "CLEAR" button.
 
 ## Optimizations
 
-Instead of shades of gray, I would love to implement the ability to change the color of the canvas.
+Advanced features would include a color selection, drawing mode (click or drag), toggling grid lines, and applying an optional blur effect. I would also like options for users to engage with the canvas via keyboard and simulate freehand drawing action on touchscreens.
 
 ## Lessons Learned
 
-I learned how to use simple math to both build the grid and implement the color increments.
+I learned how to use simple math to both build the grid and implement the shading increments.
 
 ## Examples
 Take a look at this example that I have in my own portfolio:

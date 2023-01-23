@@ -41,8 +41,8 @@ h1 {
 }
 
 .cell {
-  background-color: rgb(240, 240, 240);
-  opacity: 1.0;
+  background: white;
+  opacity: 0;
 }
 
 #controls {
@@ -90,6 +90,23 @@ h1 {
   width: 1rem;
   height: 1rem;
   cursor: pointer;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  background: rgb(219, 216, 216);
+  opacity: 0.75;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.1ch;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 1;
 }
 
 footer {
@@ -161,8 +178,11 @@ a:hover {
   }
 
   .current-size {
-    flex-grow: 2;
-    text-align: right;
+    text-align: left;
+  }
+
+  button {
+    margin: 0;
   }
 
   footer {

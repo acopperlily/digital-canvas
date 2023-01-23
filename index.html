@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digital Canvas</title>
+  <link rel="icon" type="image/jpg" href="fav9.jpg">
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,16 +17,21 @@
   <header>
     <h1>Digital Canvas</h1>
   </header>
+
   <main>
     <div id="grid"></div>
+
     <div id="controls">
-      <p class="reset">RESIZE & RESET</p>
+      <!-- <p class="reset">RESIZE & RESET</p> -->
+      <p class="current-size"></p>
       <div class="slide-container">
         <input type="range" value="11" name="slider" id="slider" min="2" max="99">
       </div>
-      <p class="current-size"></p>
+      <!-- <p class="current-size"></p> -->
+      <button>CLEAR</button>
     </div>
   </main>
+
   <footer>
     <p><span>&copy; 2021 &#8211; 2023</span> <a href="https://aprilcopley.netlify.app/" target="_blank" rel="noopener" rel="noreferrer">April Copley</a></p>
     <div class="links">
