@@ -3,7 +3,7 @@ Modeled after a popular childhood toy, users employ simple mouse movements or ta
 
 **Link to project:** https://acopperlily.github.io/digital-canvas/
 
-![alt text](https://github.com/acopperlily/digital-canvas/blob/main/preview.png?raw=true)
+![alt text](https://raw.githubusercontent.com/acopperlily/digital-canvas/main/main-preview.png)
 
 ## How It's Made
 
