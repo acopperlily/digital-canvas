@@ -102,7 +102,6 @@ h1 {
   margin-top: -0.3rem;
   /* Center thumb by subtracting half thumb height from half track height */
   margin-top: calc(0.4rem/2 - 1rem/2);
-  /* cursor: pointer; */
 }
 
 #slider::-moz-range-thumb {
@@ -112,7 +111,6 @@ h1 {
   background: white;
   width: 1rem;
   height: 1rem;
-  /* cursor: pointer; */
 }
 
 #slider:focus {
