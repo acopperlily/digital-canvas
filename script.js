@@ -18,8 +18,13 @@ grid.addEventListener('pointermove', e => {
   console.log('grid move', e.clientX, e.clientY);
   let cellNum = document.elementFromPoint(e.clientX, e.clientY);
   console.log(cellNum);
-  if (cellNum.id && parseInt(cellNum.id)) draw(cellNum.id);
+  if (cellNum.id && parseInt(cellNum.id) && cellNum.id != previousCell) draw(cellNum.id);
   // draw(cellNum.id);
+});
+
+grid.addEventListener('click', e => {
+  console.log('click', e.target);
+  draw(e.target.id);
 });
 
 grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -37,7 +42,7 @@ function newGrid(grid, size) {
 
 function draw(cellNum) {
   console.log('touches in draw?', cellNum);
-  if (cellNum == previousCell) return;
+  // if (cellNum == previousCell) return;
   console.log('parseint', parseInt(cellNum));
   previousCell = cellNum;
   let cell = document.getElementById(cellNum);
