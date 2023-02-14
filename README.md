@@ -13,7 +13,7 @@ With either the tap of a finger or the movement of the cursor, the cells turn da
 
 ## Optimizations
 
-Advanced features would include a color selection, drawing mode (click or drag), toggling grid lines, and applying an optional blur effect. I would also like options for users to engage with the canvas via keyboard and simulate freehand drawing action on touchscreens.
+Advanced features would include a color selection, drawing mode (click or drag), toggling grid lines, and applying an optional blur effect.
 
 ## Lessons Learned
 

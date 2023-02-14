@@ -8,7 +8,7 @@ currentSize.textContent = `${slider.value} x ${slider.value}`;
 function createCells(i) {
   let cell = document.createElement('div');
   cell.classList.add('cell');
-  cell.setAttribute('id', i);
+  cell.setAttribute('id', i + 1);
   return cell;
 }
 
@@ -28,6 +28,7 @@ grid.addEventListener('click', e => {
 });
 
 grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+// grid.style.backgroundColor = 'blue';
 
 for (let i = 0; i < size * size; i++) {
   grid.appendChild(createCells(i));
@@ -42,15 +43,11 @@ function newGrid(grid, size) {
 
 function draw(cellNum) {
   console.log('touches in draw?', cellNum);
-  // if (cellNum == previousCell) return;
   console.log('parseint', parseInt(cellNum));
   previousCell = cellNum;
   let cell = document.getElementById(cellNum);
   console.log('cell:', cell);
-  // if (e.id == previousCell) {
-  //   previousCell = e.id;
-  //   return;
-  // }
+
   cell.style.backgroundColor = "black";
   let opacity = getComputedStyle(cell).opacity;
   if (opacity == '1') {
