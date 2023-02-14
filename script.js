@@ -17,7 +17,8 @@ const grid = document.querySelector('#grid');
 grid.addEventListener('pointermove', e => {
   console.log('grid move', e.clientX, e.clientY);
   let cellNum = document.elementFromPoint(e.clientX, e.clientY);
-  console.log(cellNum);
+  console.log('cellNum:', cellNum);
+  // if (!cellNum) return;
   if (cellNum.id && parseInt(cellNum.id) && cellNum.id != previousCell) draw(cellNum.id);
   // draw(cellNum.id);
 });

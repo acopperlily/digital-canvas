@@ -57,11 +57,6 @@ main {
   display: grid;
 }
 
-.cell {
-  background: white;
-  opacity: 0;
-}
-
 #controls {
   width: 100%;
   max-width: 600px;
@@ -72,7 +67,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  row-gap: 1.5rem;
 }
 
 .slide-container {
@@ -171,7 +166,7 @@ main {
 
 button {
   color: black;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   padding: 0.6rem 1.5rem;
   background: rgb(219, 216, 216);
   opacity: 0.75;
@@ -260,3 +255,20 @@ a:hover {
   }
 }
 
+@media screen and (min-width: 680px) and (min-height: 601px) {
+  #controls {
+    margin-top: 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .slide-container {
+    width: 60%;
+  }
+
+  footer {
+    flex-direction: row;
+    column-gap: 1rem;
+    padding: 2rem;
+  }
+}
