@@ -57,6 +57,11 @@ main {
   display: grid;
 }
 
+.cell {
+  background: black;
+  opacity: 0;
+}
+
 #controls {
   width: 100%;
   max-width: 600px;

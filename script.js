@@ -15,17 +15,16 @@ function createCells(i) {
 const grid = document.querySelector('#grid');
 
 grid.addEventListener('pointermove', e => {
-  console.log('grid move', e.clientX, e.clientY);
-  let cellNum = document.elementFromPoint(e.clientX, e.clientY);
-  console.log('cellNum:', cellNum);
-  // if (!cellNum) return;
-  if (cellNum.id && parseInt(cellNum.id) && cellNum.id != previousCell) draw(cellNum.id);
-  // draw(cellNum.id);
+  // console.log('grid move', e.clientX, e.clientY);
+  let cell = document.elementFromPoint(e.clientX, e.clientY);
+  console.log('cell inside listener function:', cell);
+
+  if (cell.classList[0] === 'cell' && cell.id != previousCell) draw(cell);
 });
 
 grid.addEventListener('click', e => {
   console.log('click', e.target);
-  draw(e.target.id);
+  draw(e.target);
 });
 
 grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -42,14 +41,10 @@ function newGrid(grid, size) {
   grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
 }
 
-function draw(cellNum) {
-  console.log('touches in draw?', cellNum);
-  console.log('parseint', parseInt(cellNum));
-  previousCell = cellNum;
-  let cell = document.getElementById(cellNum);
-  console.log('cell:', cell);
+function draw(cell) {
+  console.log('cell inside draw:', cell);
+  previousCell = cell.id;
 
-  cell.style.backgroundColor = "black";
   let opacity = getComputedStyle(cell).opacity;
   if (opacity == '1') {
     cell.style.opacity = '0';
