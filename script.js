@@ -1,6 +1,6 @@
 // Set up and update canvas grid
 const Grid = (() => {
-  let previousCell;
+  let previousCell = '0';
   const canvas = document.getElementById('grid');
   const currentSize = document.querySelector('.current-size');
 
@@ -35,7 +35,6 @@ const Grid = (() => {
   };
 
   const deleteCells = () => {
-    console.log('iife', canvas.lastElementChild);
     while (canvas.firstElementChild) {
       canvas.removeChild(canvas.firstElementChild);
     }
@@ -48,19 +47,19 @@ const Grid = (() => {
 
 // Set up listeners for range slider and clear button
 const Controls = (() => {
-  const range = document.getElementById('slider');
+  const slider = document.getElementById('slider');
   const clearBtn = document.querySelector('button');
-  const getSize = () => range.value;
+  const getSize = () => slider.value;
 
-  range.oninput = () => {
+  const newGrid = () => {
     Grid.deleteCells();
     Grid.drawGrid(getSize());
   };
 
-  clearBtn.addEventListener('click', () => {
-    Grid.deleteCells();
-    Grid.drawGrid(getSize());
-  });
+  slider.oninput = newGrid;
+
+  clearBtn.addEventListener('click', newGrid);
+
 })();
 
 // Create cell divs
