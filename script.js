@@ -1,50 +1,67 @@
-const slider = document.getElementById('slider');
-let size = slider.value;
-let previousCell = '0';
+// Set up and update canvas grid
+const Grid = (() => {
+  console.log('grid iife');
+  let previousCell;
+  const canvas = document.getElementById('grid');
+  const currentSize = document.querySelector('.current-size');
 
-const currentSize = document.querySelector('.current-size');
-currentSize.textContent = `${slider.value} x ${slider.value}`;
+  canvas.addEventListener('click', e => {
+    console.log('click', e.target);
+    draw(e.target);
+  });
+
+  canvas.addEventListener('pointermove', e => {
+    // console.log('grid move', e.clientX, e.clientY);
+    let cell = document.elementFromPoint(e.clientX, e.clientY);
+    // console.log('cell inside listener function:', cell);
+    if (cell == null) {
+      // previousCell = '0';
+      updatePrevCell('0');
+      return;
+    }
+    if (cell.classList[0] === 'cell' && cell.id != previousCell) draw(cell);
+  });
+
+  const updatePrevCell = n => previousCell = n;
+
+  const setSize = size => {
+    currentSize.textContent = `${size} x ${size}`;
+  };
+
+  const drawGrid = size => {
+    console.log('iife grid size:', slider.value);
+    setSize(size);
+    for (let i = 1; i <= size * size; i++) {
+      canvas.appendChild(createCells(i));
+    }
+    canvas.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  };
+
+  const deleteCells = () => {
+    console.log('iife', canvas.lastElementChild);
+    while (canvas.firstElementChild) {
+      canvas.removeChild(canvas.firstElementChild);
+    }
+  };
+
+  drawGrid(11);
+
+  return {drawGrid, deleteCells, updatePrevCell};
+})();
+
+
 
 function createCells(i) {
   let cell = document.createElement('div');
   cell.classList.add('cell');
-  cell.setAttribute('id', i + 1);
+  cell.setAttribute('id', i);
+  // console.log('createcells:', cell);
   return cell;
 }
 
-const grid = document.querySelector('#grid');
-
-grid.addEventListener('pointermove', e => {
-  // console.log('grid move', e.clientX, e.clientY);
-  let cell = document.elementFromPoint(e.clientX, e.clientY);
-  console.log('cell inside listener function:', cell);
-
-  if (cell.classList[0] === 'cell' && cell.id != previousCell) draw(cell);
-});
-
-grid.addEventListener('click', e => {
-  console.log('click', e.target);
-  draw(e.target);
-});
-
-grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-// grid.style.backgroundColor = 'blue';
-
-for (let i = 0; i < size * size; i++) {
-  grid.appendChild(createCells(i));
-}
-
-function newGrid(grid, size) {
-  for (let i = 0; i < size * size; i++) {
-    grid.appendChild(createCells(i));
-  }
-  grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-}
-
 function draw(cell) {
-  console.log('cell inside draw:', cell);
-  previousCell = cell.id;
-
+  // console.log('cell inside draw:', cell);
+  Grid.updatePrevCell(cell.id);
   let opacity = getComputedStyle(cell).opacity;
   if (opacity == '1') {
     cell.style.opacity = '0';
@@ -53,21 +70,19 @@ function draw(cell) {
   }
 }
 
-function deleteCells() {
-  while (grid.firstElementChild) {
-    grid.removeChild(grid.firstElementChild);
-  }
-}
+// Set up listeners for range slider and clear button
+const Controls = (() => {
+  const range = document.getElementById('slider');
+  const clearBtn = document.querySelector('button');
+  const getSize = () => range.value;
 
-const clearBtn = document.querySelector('button');
-clearBtn.addEventListener('click', () => {
-  deleteCells();
-  newGrid(grid, size);
-});
+  range.oninput = () => {
+    Grid.deleteCells();
+    Grid.drawGrid(getSize());
+  };
 
-slider.oninput = () => {
-  deleteCells();
-  size = slider.value;
-  currentSize.textContent = `${slider.value} x ${slider.value}`
-  newGrid(grid, size);
-};
+  clearBtn.addEventListener('click', () => {
+    Grid.deleteCells();
+    Grid.drawGrid(getSize());
+  });
+})();

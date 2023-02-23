@@ -35,6 +35,7 @@ h1 {
 }
 
 main {
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -43,6 +44,13 @@ main {
   align-items: center;
   margin-bottom: 2rem;
 }
+
+/* #overlay {
+  position: relative;
+  background-color: red;
+  opacity: 0.5;
+  z-index: 11;
+} */
 
 #grid {
   background-color: white;
