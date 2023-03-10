@@ -37,7 +37,7 @@ const Grid = (() => {
     currentSize.textContent = `${size} x ${size}`;
   };
 
-  const drawGrid = size => {
+  const drawGrid = (size=11) => {
     let newArray = cellArray.getAllCells();
     if (newArray.length) {
       size = parseInt(newArray.length ** (1 / 2));
@@ -110,7 +110,7 @@ function drawCell(cell) {
   let opacity = getComputedStyle(cell).opacity;
   let newOpacity = '0';
   if (opacity != '1')
-    newOpacity = parseFloat(opacity) + 0.1;
+    newOpacity = (parseFloat(opacity) + 0.1).toFixed(1);
 
   cell.style.opacity = newOpacity;
   cellArray.updateCell(index, newOpacity);
