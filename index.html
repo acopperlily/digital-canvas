@@ -17,47 +17,61 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+  <div data-fx="false" class="test"></div>
   <header>
-    <h1>Digital Canvas</h1>
-    <!-- <button class="saveBtn">Save</button> -->
-    <i class="fas fa-chevron-down saveBtn"></i>
+    <div class="header__container">
+      <h1 class="header__title">Digital Canvas</h1>
+
+      <nav class="header__nav">
+        <button class="btn header__menuBtn" aria-controls="header__nav-list" aria-expanded="false"></button>
+        <ul class="header__nav-list" data-open="false" id="header__nav-list">
+          <li class="header__nav-item">Home</li>
+          <li class="header__nav-item">About</li>
+          <li class="header__nav-item saveBtn">
+            <span class="save-text">Save Progress</span>
+            <span class="saved hidden">Saved<img class="green-check" src="/images/plain-check.svg"></span>
+          </li>
+        </ul>
+      </nav>
+    </div> 
   </header>
 
   <main>
-    <div id="overlay"><div id="grid" class="no-select"></div></div>
+    <div class="container main__container">
+      <div id="main__grid" class="no-select" data-toggleEvents="false"></div>
 
-    <div id="controls">
+      <div id="main__controls" data-toggleEvents="false">
 
-      <p class="current-size"></p>
+        <p class="current-size"></p>
 
-      <div class="slide-container no-select">
-        <input type="range" value="11" name="slider" id="slider" min="2" max="99">
+        <div class="slide-container no-select">
+          <input type="range" value="11" name="slider" id="slider" min="2" max="99">
+        </div>
+
+        <button class="btn clearBtn">CLEAR</button>
+
       </div>
-
-      <button class="clearBtn">CLEAR</button>
-
     </div>
-
   </main>
-
   <footer>
 
-    <p><span>&copy; 2021 &#8211; 2023</span> <a href="https://aprilcopley.netlify.app/" target="_blank">April Copley</a></p>
+    <div class="container footer__container">
+      <p><span class="footer__dates">&copy; 2021 &#8211; 2023</span> <a class="btn" href="https://aprilcopley.netlify.app/" target="_blank">April Copley</a></p>
 
-    <div class="links">
+      <ul class="footer__links">
 
-      <a href="https://twitter.com/aprilcopley_dev" target="_blank">
-        <i class="fab fa-twitter"></i>
-      </a>
+        <li class="footer__link btn" href="https://twitter.com/aprilcopley_dev" target="_blank">
+          <i class="fab fa-twitter footer__iconr"></i>
+        </a>
 
-      <a href="https://github.com/acopperlily" target="_blank">
-        <i class="fab fa-github"></i>
-      </a>
+        <li class="footer__link btn" href="https://github.com/acopperlily" target="_blank">
+          <i class="fab fa-github footer__icon"></i>
+        </li>
 
-      <a href="https://www.linkedin.com/in/april-copley/" target="_blank">
-        <i class="fab fa-linkedin"></i>
-      </a>
-
+        <li class="footer__link btn" href="https://www.linkedin.com/in/april-copley/" target="_blank">
+          <i class="fab fa-linkedin footer__icon"></i>
+        </li>
+      </ul>
     </div>
 
   </footer>

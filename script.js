@@ -1,19 +1,25 @@
+// let isSaved = false;
 
 // Set up and update cell array
 const cellArray = (() => {
   let allCells = JSON.parse(window.localStorage.getItem('canvas')) || [];
+  let isSaved = false;
+  if (allCells) {
+    isSaved = true;
+    // updateIsSaved(true);
+  }
   const getAllCells = () => allCells;
   
   const resetCells = () => allCells = [];
   const createCellArray = arr => allCells = [...arr];
   const updateCell = (index, opacity) => allCells[index] = opacity;
-  return { getAllCells, resetCells, createCellArray, updateCell };
+  return { getAllCells, resetCells, createCellArray, updateCell, isSaved };
 })();
 
 // Set up and update canvas grid
 const Grid = (() => {
   let previousCell = null;
-  const canvas = document.getElementById('grid');
+  const canvas = document.getElementById('main__grid');
   const currentSize = document.querySelector('.current-size');
 
   canvas.addEventListener('click', e => {
@@ -51,6 +57,7 @@ const Grid = (() => {
       canvas.appendChild(createCell(i, newArray[i]));
     }
     canvas.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    // updateIsSaved();
   };
 
   const deleteCells = () => {
@@ -62,6 +69,7 @@ const Grid = (() => {
   };
 
   drawGrid();
+  updateIsSaved(cellArray.isSaved);
 
   return {drawGrid, deleteCells, updatePrevCell};
 })();
@@ -71,22 +79,57 @@ const Grid = (() => {
   const slider = document.getElementById('slider');
   const clearBtn = document.querySelector('.clearBtn');
   const saveBtn = document.querySelector('.saveBtn');
+  const menu = document.querySelector('.header__menuBtn');
+  const overlay = document.querySelector('.test');
+  const canvas = document.querySelector('#main__grid');
+  const controls = document.querySelector('#main__controls');
 
   const getSize = () => slider.value;
 
   slider.oninput = () => {
     Grid.deleteCells();
     Grid.drawGrid(getSize());
+    updateIsSaved();
   };
 
   clearBtn.addEventListener('click', () => {
     Grid.deleteCells();
     Grid.drawGrid(getSize());
+    updateIsSaved();
   });
 
   saveBtn.addEventListener('click', () => {
+    const check = document.querySelector('.saved');
+    const save = document.querySelector('.save-text');
+    console.log('menu item clicked');
     let savedCanvas = cellArray.getAllCells();
     window.localStorage.setItem('canvas', JSON.stringify(savedCanvas));
+    // check.classList.remove('hidden');
+    // save.classList.add('hidden');
+    if (!cellArray.isSaved)
+      updateIsSaved(true);
+    // saveBtn.textContent = 'Saved';
+  });
+
+  menu.addEventListener('click', () => {
+    const nav = document.querySelector('.header__nav-list');
+    let canvasValue = canvas.getAttribute('data-toggleEvents');
+    let controlsValue = controls.getAttribute('data-toggleEvents');
+    canvasValue = canvasValue === 'true' ? true : false;
+    controlsValue = controlsValue === 'true' ? true : false;
+    let test = overlay.getAttribute('data-fx');
+    test = test === 'true' ? true : false;
+    overlay.setAttribute('data-fx', !test);
+    let value = nav.getAttribute('data-open');
+    let expanded = menu.getAttribute('aria-expanded');
+    value = value === 'true' ? true : false;
+    expanded = expanded === 'true' ? true : false;
+    canvas.setAttribute('data-toggleEvents', !canvasValue);
+    controls.setAttribute('data-toggleEvents', !controlsValue);
+    nav.setAttribute('data-open', !value);
+    menu.setAttribute('aria-expanded', !expanded);
+    nav.classList.toggle('active');
+    // console.log('value', value);
   });
 
   return { slider }
@@ -114,4 +157,20 @@ function drawCell(cell) {
 
   cell.style.opacity = newOpacity;
   cellArray.updateCell(index, newOpacity);
+  if (cellArray.isSaved === true) 
+    updateIsSaved();
 }
+
+function updateIsSaved(bool) {
+  cellArray.isSaved = bool || false;
+  const check = document.querySelector('.saved');
+  const save = document.querySelector('.save-text');
+  if (bool) {
+    check.classList.remove('hidden');
+    save.classList.add('hidden');
+  } else {
+    check.classList.add('hidden');
+    save.classList.remove('hidden');
+  }
+}
+
