@@ -163,8 +163,8 @@ function drawCell(cell) {
 
 function updateIsSaved(bool) {
   cellArray.isSaved = bool || false;
-  const check = document.querySelector('.saved');
-  const save = document.querySelector('.save-text');
+  const check = document.querySelector('.saved-text');
+  const save = document.querySelector('.default-text');
   if (bool) {
     check.classList.remove('hidden');
     save.classList.add('hidden');

@@ -23,14 +23,12 @@
       <h1 class="header__title">Digital Canvas</h1>
 
       <nav class="header__nav">
-        <button class="btn header__menuBtn" aria-controls="header__nav-list" aria-expanded="false"></button>
+        <button class="clickable header__menuBtn" aria-controls="header__nav-list" aria-expanded="false"></button>
+        
         <ul class="header__nav-list" data-open="false" id="header__nav-list">
-          <li class="header__nav-item">Home</li>
-          <li class="header__nav-item">About</li>
-          <li class="header__nav-item saveBtn">
-            <span class="save-text">Save Progress</span>
-            <span class="saved hidden">Saved<img class="green-check" src="/images/plain-check.svg"></span>
-          </li>
+          <li class="header__nav-item"><a href="#">Home</a></li>
+          <li class="header__nav-item"><a href="#">About</a></li>
+
         </ul>
       </nav>
     </div> 
@@ -48,7 +46,13 @@
           <input type="range" value="11" name="slider" id="slider" min="2" max="99">
         </div>
 
-        <button class="btn clearBtn">CLEAR</button>
+        <div class="controls__buttons">
+          <button class="btn clickable clearBtn">Clear</button>
+          <button class="btn clickable saveBtn">
+            <span class="default-text">Save Progress</span>
+            <span class="saved-text hidden">Saved<i class="fas fa-check"></i></span>
+          </button>
+        </div>
 
       </div>
     </div>
@@ -56,19 +60,19 @@
   <footer>
 
     <div class="container footer__container">
-      <p><span class="footer__dates">&copy; 2021 &#8211; 2023</span> <a class="btn" href="https://aprilcopley.netlify.app/" target="_blank">April Copley</a></p>
+      <p><span class="footer__dates">&copy; 2021 &#8211; 2023</span> <a class="clickable" href="https://aprilcopley.netlify.app/" target="_blank">April Copley</a></p>
 
       <ul class="footer__links">
 
-        <li class="footer__link btn" href="https://twitter.com/aprilcopley_dev" target="_blank">
+        <li class="footer__link clickable" href="https://twitter.com/aprilcopley_dev" target="_blank">
           <i class="fab fa-twitter footer__iconr"></i>
         </a>
 
-        <li class="footer__link btn" href="https://github.com/acopperlily" target="_blank">
+        <li class="footer__link clickable" href="https://github.com/acopperlily" target="_blank">
           <i class="fab fa-github footer__icon"></i>
         </li>
 
-        <li class="footer__link btn" href="https://www.linkedin.com/in/april-copley/" target="_blank">
+        <li class="footer__link clickable" href="https://www.linkedin.com/in/april-copley/" target="_blank">
           <i class="fab fa-linkedin footer__icon"></i>
         </li>
       </ul>
