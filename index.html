@@ -23,8 +23,11 @@
       <h1 class="header__title">Digital Canvas</h1>
 
       <nav class="header__nav">
-        <button class="clickable header__menuBtn" aria-controls="header__nav-list" aria-expanded="false"></button>
-        
+        <button class="clickable header__menuBtn" aria-controls="header__nav-list" aria-expanded="false">
+          <i class="nav__arrow fas fa-chevron-down"></i>
+          <i class="hidden nav__arrow  fas fa-chevron-up"></i>
+        </button>
+
         <ul class="header__nav-list" data-open="false" id="header__nav-list">
           <li class="header__nav-item"><a href="#">Home</a></li>
           <li class="header__nav-item"><a href="#">About</a></li>

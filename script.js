@@ -104,15 +104,14 @@ const Grid = (() => {
     console.log('menu item clicked');
     let savedCanvas = cellArray.getAllCells();
     window.localStorage.setItem('canvas', JSON.stringify(savedCanvas));
-    // check.classList.remove('hidden');
-    // save.classList.add('hidden');
+
     if (!cellArray.isSaved)
       updateIsSaved(true);
-    // saveBtn.textContent = 'Saved';
   });
 
   menu.addEventListener('click', () => {
     const nav = document.querySelector('.header__nav-list');
+    const arrows = document.querySelectorAll('.nav__arrow');
     let canvasValue = canvas.getAttribute('data-toggleEvents');
     let controlsValue = controls.getAttribute('data-toggleEvents');
     canvasValue = canvasValue === 'true' ? true : false;
@@ -129,6 +128,7 @@ const Grid = (() => {
     nav.setAttribute('data-open', !value);
     menu.setAttribute('aria-expanded', !expanded);
     nav.classList.toggle('active');
+    arrows.forEach(arrow => arrow.classList.toggle('hidden'));
     // console.log('value', value);
   });
 

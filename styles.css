@@ -131,6 +131,11 @@ header {
   transform: scale(.5);
 }
 
+.fa-chevron-down,
+.fa-chevron-up {
+  color: var(--clr-light);
+  font-size: 1.5rem;
+}
 
 .header__menuBtn {
   display: block;
@@ -140,14 +145,14 @@ header {
   width: 2rem;
   aspect-ratio: 1;
   z-index: 99;
-  /* background-color: transparent; */
-  background-color: var(--clr-dark);
-  background-image: url('/images/chevron-down.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  background-color: transparent;
+  /* background-color: var(--clr-dark); */
+  /* background-image: url('/images/chevron-down.svg'); */
+  /* background-repeat: no-repeat; */
+  /* background-size: contain; */
+  /* background-position: center; */
   margin-inline: auto;
-  /* opacity: .8; */
+  opacity: .8;
   border: none;
 
 }
@@ -165,7 +170,7 @@ header {
 }
 
 [aria-expanded="true"] {
-  background-image: url('images/chevron-up.svg');
+  /* background-image: url('images/chevron-up.svg'); */
 
 }
 
@@ -178,7 +183,7 @@ ul {
   background-color: transparent;
   pointer-events: none;
   /* width: max(250px, 30em); */
-  width: clamp(200px, 320px, 30em);
+  width: clamp(50px, 10em, 20em);
   /* display: none; */
   position: absolute;
   top: 3rem;
@@ -252,7 +257,8 @@ ul {
   /* outline: 1px solid blue; */
 }
 
-.hidden {
+.hidden,
+.nav__arrow.hidden {
   display: none;
 }
 
@@ -311,7 +317,7 @@ main {
 #main__controls {
   /* border: 1px solid yellow; */
   position: relative;
-  margin-block: 0.5em;
+  margin-block: 0.3em;
   margin-inline: auto;
   width: 100%;
   max-width: 600px;
@@ -428,9 +434,7 @@ main {
 }
 
 .clearBtn {
-  color: black;
-  /* margin-top: 1rem; */
-  /* padding: 0.6rem 1.5rem; */
+  color: var(--clr-dark);
   background-color: var(--clr-light);
 }
 
@@ -475,6 +479,10 @@ a:hover {
   justify-content: center;
   align-items: center;
   gap: 0.5em;
+}
+
+.footer__dates {
+  margin-right: 0.4em;
 }
 
 .footer__links {
@@ -543,13 +551,21 @@ a:hover {
   }
 }
 
-@media (orientation: landscape) and (max-height: 600px) {
-  .main__container {
+@media (min-width: 500px) {
+  .footer__container {
     flex-direction: row;
+    gap: 2em;
   }
 }
 
+/* @media (orientation: landscape) {
+  .main__container {
+    flex-direction: row;
+  }
+} */
+
 @media (min-width: 70em) {
+/* @media (orientation: landscape) { */
   .header__container {
     display: flex;
     justify-content: space-between;
