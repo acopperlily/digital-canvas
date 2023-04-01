@@ -1,12 +1,9 @@
-// let isSaved = false;
-
 // Set up and update cell array
 const cellArray = (() => {
   let allCells = JSON.parse(window.localStorage.getItem('canvas')) || [];
   let isSaved = false;
   if (allCells) {
     isSaved = true;
-    // updateIsSaved(true);
   }
   const getAllCells = () => allCells;
   
