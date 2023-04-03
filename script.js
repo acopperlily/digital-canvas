@@ -17,7 +17,7 @@ const cellArray = (() => {
 const Grid = (() => {
   let previousCell = null;
   const canvas = document.getElementById('main__grid');
-  const currentSize = document.querySelector('.current-size');
+  const currentSize = document.querySelector('.slider-size');
 
   canvas.addEventListener('click', e => {
     drawCell(e.target);
@@ -37,7 +37,7 @@ const Grid = (() => {
 
   const setSize = size => {
     slider.value = size;
-    currentSize.textContent = `${size} x ${size}`;
+    currentSize.textContent = `Size: ${size} x ${size}`;
   };
 
   const drawGrid = (size=11) => {
@@ -80,6 +80,14 @@ const Grid = (() => {
   const overlay = document.querySelector('.test');
   const canvas = document.querySelector('#main__grid');
   const controls = document.querySelector('#main__controls');
+  const toggleGridlines = document.getElementById('toggleGridlines');
+
+  toggleGridlines.addEventListener('change', () => {
+    const cellDivs = document.querySelectorAll('.grid__cellContainer');
+    cellDivs.forEach(div => {
+      div.setAttribute('data-gridlines', toggleGridlines.checked);
+    });
+  });
 
   const getSize = () => slider.value;
 
@@ -129,17 +137,20 @@ const Grid = (() => {
     // console.log('value', value);
   });
 
-  return { slider }
+  return { toggleGridlines, slider }
 })();
 
 // Create cell divs
 function createCell(index, opacity='0') {
+  const cellContainer = document.createElement('div');
   const cell = document.createElement('div');
+  cellContainer.classList.add('grid__cellContainer');
+  cellContainer.setAttribute('data-gridlines', toggleGridlines.checked);
   cell.classList.add('cell');
   cell.setAttribute('id', index);
   cell.style.opacity = opacity;
-
-  return cell;
+  cellContainer.appendChild(cell);
+  return cellContainer;
 }
 
 // Update cell opacity

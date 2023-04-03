@@ -44,10 +44,17 @@
 
       <div id="main__controls" data-toggleEvents="false">
 
-        <p class="current-size"></p>
+        <div class="controls__toggleGridLines">
+          <label class="controls__label clickable" for="toggleGridlines">Toggle Grid</label>
+          <input class="clickable" type="checkbox" name="toggleGridlines" id="toggleGridlines">
+        </div>
 
-        <div class="slide-container no-select">
-          <input type="range" value="11" name="slider" id="slider" min="2" max="99">
+        <div class="controls__slider">
+          <label for="slider" class="slider-size controls__label clickable"></label>
+
+          <div class="slide-container no-select">
+            <input type="range" value="11" name="slider" id="slider" min="2" max="99">
+          </div>
         </div>
 
         <div class="controls__buttons">
@@ -70,16 +77,22 @@
 
       <ul class="footer__links">
 
-        <li class="footer__link clickable" href="https://twitter.com/aprilcopley_dev" target="_blank">
-          <i class="fab fa-twitter footer__icon"></i>
-        </a>
-
-        <li class="footer__link clickable" href="https://github.com/acopperlily" target="_blank">
-          <i class="fab fa-github footer__icon"></i>
+        <li class="footer__link clickable">
+          <a href="https://twitter.com/aprilcopley_dev" target="_blank">
+            <i class="fab fa-twitter footer__icon"></i>
+          </a>
         </li>
 
-        <li class="footer__link clickable" href="https://www.linkedin.com/in/april-copley/" target="_blank">
-          <i class="fab fa-linkedin footer__icon"></i>
+        <li class="footer__link clickable">
+          <a href="https://github.com/acopperlily" target="_blank">
+            <i class="fab fa-github footer__icon"></i>
+          </a>
+        </li>
+
+        <li class="footer__link clickable">
+          <a href="https://www.linkedin.com/in/april-copley/" target="_blank">
+            <i class="fab fa-linkedin footer__icon"></i>
+          </a>
         </li>
       </ul>
     </div>
