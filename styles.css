@@ -9,6 +9,7 @@
   --clr-light: rgb(219, 216, 216);
   --clr-med: gray;
   --clr-med-dark: rgb(65, 66, 67);
+  --clr-highlight: rgb(88, 95, 221);
 
   --br: 1px;
 
@@ -77,9 +78,6 @@ body {
   /* transition: all 300ms ease-in-out; */
 
 }
-
-
-
 
 header {
   position: relative;
@@ -313,7 +311,7 @@ main {
 }
 
 [data-gridlines="true"] {
-  outline: 1px dotted slateblue;
+  outline: 1px dotted var(--clr-highlight);
 }
 
 [data-toggleEvents="true"] {
@@ -342,9 +340,51 @@ main {
   row-gap: 3em;
 }
 
+.controls__toggleGridlines {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+}
+
 .controls__label {
   font-size: 0.9rem;
   font-weight: 500;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+
+  width: 2.4rem;
+  height: 1.2rem;
+  background-color: var(--clr-med);
+  border-radius: 100px;
+}
+
+.switch::after {
+  content: '';
+  position: absolute;
+
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--clr-light);
+
+  top: 0.1rem;
+  left: 0.1rem;
+  transition: all 0.3s;
+}
+
+.controls__switch:checked + .switch::after {
+  left: 1.3rem;
+}
+
+.controls__switch:checked + .switch {
+  background-color: var(--clr-highlight);
+}
+
+.controls__switch {
+  display: none;
 }
 
 .controls__slider {
@@ -593,6 +633,7 @@ a:hover {
   #main__controls {
     /* max-width: 30em; */
     /* padding-inline: clamp(2em, 4em + 1vw, 20em); */
+    gap: clamp(3em, 3em + 1vw, 8em);
   }
 
   .controls__buttons {

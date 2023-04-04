@@ -30,8 +30,8 @@
 
         <ul class="header__nav-list" data-open="false" id="header__nav-list">
           <li class="header__nav-item clickable"><a href="#">Home</a></li>
+          <li class="header__nav-item clickable"><a href="#">Gallery</a></li>
           <li class="header__nav-item clickable"><a href="#">About</a></li>
-          <!-- <li class="header__nav-item clickable"><a href="#">Contact</a></li> -->
 
         </ul>
       </nav>
@@ -44,9 +44,10 @@
 
       <div id="main__controls" data-toggleEvents="false">
 
-        <div class="controls__toggleGridLines">
+        <div class="controls__toggleGridlines">
           <label class="controls__label clickable" for="toggleGridlines">Toggle Grid</label>
-          <input class="clickable" type="checkbox" name="toggleGridlines" id="toggleGridlines">
+          <input class="controls__switch clickable" type="checkbox" name="toggleGridlines" id="toggleGridlines">
+          <label for="toggleGridlines" class="clickable switch"></label>
         </div>
 
         <div class="controls__slider">
@@ -60,7 +61,7 @@
         <div class="controls__buttons">
           <button class="btn clickable clearBtn">Clear</button>
           <button class="btn clickable saveBtn">
-            <span class="default-text">Save Progress</span>
+            <span class="default-text">Save</span>
             <span class="saved-text hidden">Saved<i class="fas fa-check"></i></span>
           </button>
         </div>
