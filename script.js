@@ -114,28 +114,28 @@ const Grid = (() => {
       updateIsSaved(true);
   });
 
-  menu.addEventListener('click', () => {
-    const nav = document.querySelector('.header__nav-list');
-    const arrows = document.querySelectorAll('.nav__arrow');
-    let canvasValue = canvas.getAttribute('data-toggleEvents');
-    let controlsValue = controls.getAttribute('data-toggleEvents');
-    canvasValue = canvasValue === 'true' ? true : false;
-    controlsValue = controlsValue === 'true' ? true : false;
-    let test = overlay.getAttribute('data-fx');
-    test = test === 'true' ? true : false;
-    overlay.setAttribute('data-fx', !test);
-    let value = nav.getAttribute('data-open');
-    let expanded = menu.getAttribute('aria-expanded');
-    value = value === 'true' ? true : false;
-    expanded = expanded === 'true' ? true : false;
-    canvas.setAttribute('data-toggleEvents', !canvasValue);
-    controls.setAttribute('data-toggleEvents', !controlsValue);
-    nav.setAttribute('data-open', !value);
-    menu.setAttribute('aria-expanded', !expanded);
-    nav.classList.toggle('active');
-    arrows.forEach(arrow => arrow.classList.toggle('hidden'));
-    // console.log('value', value);
-  });
+  // menu.addEventListener('click', () => {
+  //   const nav = document.querySelector('.header__nav-list');
+  //   const arrows = document.querySelectorAll('.nav__arrow');
+  //   let canvasValue = canvas.getAttribute('data-toggleEvents');
+  //   let controlsValue = controls.getAttribute('data-toggleEvents');
+  //   canvasValue = canvasValue === 'true' ? true : false;
+  //   controlsValue = controlsValue === 'true' ? true : false;
+  //   let test = overlay.getAttribute('data-fx');
+  //   test = test === 'true' ? true : false;
+  //   overlay.setAttribute('data-fx', !test);
+  //   let value = nav.getAttribute('data-open');
+  //   let expanded = menu.getAttribute('aria-expanded');
+  //   value = value === 'true' ? true : false;
+  //   expanded = expanded === 'true' ? true : false;
+  //   canvas.setAttribute('data-toggleEvents', !canvasValue);
+  //   controls.setAttribute('data-toggleEvents', !controlsValue);
+  //   nav.setAttribute('data-open', !value);
+  //   menu.setAttribute('aria-expanded', !expanded);
+  //   nav.classList.toggle('active');
+  //   arrows.forEach(arrow => arrow.classList.toggle('hidden'));
+  //   // console.log('value', value);
+  // });
 
   return { toggleGridlines, slider }
 })();
