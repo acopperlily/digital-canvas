@@ -2,7 +2,7 @@
 const cellArray = (() => {
   let allCells = JSON.parse(window.localStorage.getItem('canvas')) || [];
   let isSaved = false;
-  if (allCells) {
+  if (allCells.length) {
     isSaved = true;
   }
   const getAllCells = () => allCells;
@@ -20,7 +20,10 @@ const Grid = (() => {
   const currentSize = document.querySelector('.slider-size');
 
   canvas.addEventListener('click', e => {
-    drawCell(e.target);
+    console.log('test', e.target.id);
+    // drawCell(e.target);
+    if (e.target.id !== 'main__grid')
+      drawCell(e.target);
   });
 
   canvas.addEventListener('pointermove', e => {
