@@ -22,6 +22,10 @@ Advanced features would include a color selection, drawing mode (click or drag),
 
 I learned how to use simple math to both build the grid and implement the shading increments.
 
-## Example
+## Other Projects
 
 **Happy Hour Cocktails:** https://acopperlily.github.io/happy-hour-cocktails
+
+**Catalyzer:** https://catalyzer.netlify.app
+
+**Cats On Demand:** https://acopperlily.github.io/cats-on-demand

@@ -476,10 +476,11 @@ a {
   color: var(--clr-light);
   text-decoration: none;
   opacity: 1;
+  transition: all 300ms ease-in-out;
 }
 
 a:hover {
-  opacity: 0.8;
+  color: var(--clr-highlight);
 }
 
 .footer__container {
