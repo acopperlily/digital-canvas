@@ -1,7 +1,7 @@
 # Digital Canvas
-Modeled after a popular childhood toy, users employ simple mouse movements or taps to transform a plain white canvas into a dazzling work of art.
+Modeled after a beloved childhood toy, enjoy this interactive art experience created without any fancy libraries or frameworks.
 
-**Link to project:** https://acopperlily.github.io/digital-canvas
+**[Visit live site](https://acopperlily.github.io/digital-canvas)**
 
 ![Screenshot of Digital Canvas website](https://raw.githubusercontent.com/acopperlily/digital-canvas/main/main-preview.png)
 
@@ -24,8 +24,9 @@ I learned how to use simple math to both build the grid and implement the shadin
 
 ## Other Projects
 
-**Happy Hour Cocktails:** https://acopperlily.github.io/happy-hour-cocktails
+**[Happy Hour Cocktails](https://acopperlily.github.io/happy-hour-cocktails)
 
-**Catalyzer:** https://catalyzer.netlify.app
+**[Catalyzer](https://catalyzer.netlify.app)
 
-**Cats On Demand:** https://acopperlily.github.io/cats-on-demand
+**[Cats On Demand](https://acopperlily.github.io/cats-on-demand)
+
