@@ -24,9 +24,9 @@ I learned how to use simple math to both build the grid and implement the shadin
 
 ## Other Projects
 
-**[Happy Hour Cocktails](https://acopperlily.github.io/happy-hour-cocktails)
+**[Happy Hour Cocktails](https://acopperlily.github.io/happy-hour-cocktails)**
 
-**[Catalyzer](https://catalyzer.netlify.app)
+**[Catalyzer](https://catalyzer.netlify.app)**
 
-**[Cats On Demand](https://acopperlily.github.io/cats-on-demand)
+**[Cats On Demand](https://acopperlily.github.io/cats-on-demand)**
 
