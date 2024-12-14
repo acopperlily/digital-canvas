@@ -185,3 +185,17 @@ function updateIsSaved(bool) {
   }
 }
 
+// Get dates for footer
+const setDateRange = startYear => {
+  const currentYear = new Date().getFullYear();
+  // Copyright unicode: \u00a9
+  let dateRange = `\u00a9 ${startYear}`;
+  if (currentYear > startYear) {
+    // En dash unicode: \u2013
+    dateRange += `\u2013${currentYear}`;
+  }
+  const footerSpan = document.querySelector('.footer__dates');
+  footerSpan.textContent = dateRange;
+}
+
+setDateRange(2021);
