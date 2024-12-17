@@ -3,14 +3,14 @@ Modeled after a beloved childhood toy, enjoy this interactive art experience cre
 
 **[Visit live site](https://acopperlily.github.io/digital-canvas)**
 
-![Screenshot of Digital Canvas website](https://raw.githubusercontent.com/acopperlily/digital-canvas/main/main-preview.png)
+![Screenshot of Digital Canvas website](./main-preview.png)
 
 ## How It's Made
 
 **Tech used:** 
-- ![html](./images/html.svg) HTML
-- ![css](./images/css.svg) CSS
-- ![javascript](./images/javascript.svg) JavaScript
+- <img src="./images/html.svg" width="24" /> HTML
+- <img src="./images/css.svg" width="24" /> CSS
+- <img src="./images/javascript.svg" width="24" /> JavaScript
 
 With either the tap of a finger or the movement of the cursor, the cells turn darker and darker until completely black. Then the cells reset to white, and the process begins all over again. The size of the cells is adjustable via the slider, and you can reset the canvas by clicking the "CLEAR" button. There is an option to view grid lines, allowing you to target cells with precision.
 
