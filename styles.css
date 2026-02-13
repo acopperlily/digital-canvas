@@ -327,7 +327,13 @@ main {
 }
 
 .controls__switch {
-  display: none;
+  /* display: none; */
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+  background-color: black;
 }
 
 .controls__slider {
@@ -490,7 +496,7 @@ a:hover {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  column-gap: 1em;
+  column-gap: 0.5em;
   row-gap: clamp(0.2em, 0.2em + 1vh, 0.6em);
   
 }
@@ -499,7 +505,10 @@ a:hover {
   font-size: 1.1rem;
   font-size: clamp(0.8rem, 0.8rem + 1vw, 1.1rem);
   display: flex;
-  gap: 0.5em;
+}
+
+.footer__icon {
+  padding: 0.5em;
 }
 
 #main__grid::selection {

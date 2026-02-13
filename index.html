@@ -78,16 +78,40 @@
       <div id="main__controls" data-toggleEvents="false">
 
         <div class="controls__toggleGridlines">
-          <label class="controls__label clickable" for="toggleGridlines">Toggle Grid</label>
-          <input class="controls__switch clickable" type="checkbox" name="toggleGridlines" id="toggleGridlines">
+          <label 
+            class="controls__label clickable" 
+            for="toggleGridlines"
+          >
+            Toggle Grid
+            <!-- <input id="toggleGridlines" class="switch clickable switch"></input> -->
+          </label>
+
+          <input 
+            class="controls__switch clickable" 
+            type="checkbox" 
+            name="toggleGridlines" 
+            id="toggleGridlines"
+          >
+
           <label for="toggleGridlines" class="clickable switch"></label>
         </div>
 
         <div class="controls__slider">
-          <label for="slider" class="slider-size controls__label clickable"></label>
+          <label 
+            for="slider" 
+            class="slider-size controls__label clickable"
+          >
+          </label>
 
           <div class="slide-container no-select">
-            <input type="range" value="11" name="slider" id="slider" min="2" max="99">
+            <input 
+              type="range" 
+              value="11" 
+              name="slider" 
+              id="slider" 
+              min="2" 
+              max="99"
+            >
           </div>
         </div>
 
@@ -106,7 +130,7 @@
 
     <div class="container footer__container">
 
-      <span class="footer__dates"></span> 
+      <span class="footer__date"></span> 
       <a 
         class="clickable" 
         href="https://aprilcopley.netlify.app" 
@@ -126,7 +150,11 @@
             rel="noopener noreferrer"
             aria-label="Twitter profile"
           >
-            <i aria-hidden="true" class="fa-brands fa-twitter footer__icon"></i>
+            <i 
+              aria-hidden="true" 
+              class="fa-brands fa-twitter footer__icon"
+            >
+            </i>
           </a>
         </li>
 
@@ -136,7 +164,11 @@
             rel="noopener noreferrer"
             aria-label="Bluesky profile"
           >
-            <i aria-hidden="true" class="fa-brands fa-bluesky footer__icon"></i>
+            <i 
+              aria-hidden="true" 
+              class="fa-brands fa-bluesky footer__icon"
+            >
+            </i>
           </a>
         </li>
 
@@ -147,7 +179,10 @@
             rel="noopener noreferrer"
             aria-label="GitHub profile"
           >
-            <i aria-hidden="true" class="fa-brands fa-github footer__icon"></i>
+            <i 
+              aria-hidden="true" 
+              class="fa-brands fa-github footer__icon">
+            </i>
           </a>
         </li>
 
@@ -158,10 +193,16 @@
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"
           >
-            <i aria-hidden="true" class="fa-brands fa-linkedin footer__icon"></i>
+            <i 
+              aria-hidden="true" 
+              class="fa-brands fa-linkedin footer__icon"
+            >
+            </i>
           </a>
         </li>
+
       </ul>
+
     </div>
 
   </footer>

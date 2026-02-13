@@ -190,7 +190,7 @@ const setDateRange = () => {
   let currentYear = new Date().getFullYear();
   // Copyright unicode: \u00a9
   currentYear = `\u00a9 ${currentYear}`;
-  const footerSpan = document.querySelector('.footer__dates');
+  const footerSpan = document.querySelector('.footer__date');
   footerSpan.textContent = currentYear;
 }
 
