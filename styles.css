@@ -13,7 +13,7 @@
 
   --br: 1px;
 
-  --ff: 'Montserrat', Arial;
+  --ff: 'Montserrat', Arial, sans-serif;
   --ls-narrow: 0.2ch;
   --ls-wide: 0.5ch;
 }
@@ -30,13 +30,11 @@ body {
 
   display: flex;
   flex-direction: column;
-
 }
 
 .test {
   position: absolute;
   transition: all 300ms ease-in-out;
-
 }
 
 .test[data-fx="false"] {
@@ -68,6 +66,7 @@ body {
 .clickable:hover,
 .clickable:focus {
   opacity: 0.8;
+  transform: scale(0.98);
 }
 
 header {
@@ -112,10 +111,6 @@ header {
   cursor: pointer;
   flex: 1;
   transition: all 300ms ease-in-out;
-}
-
-.btn:active {
-  transform: scale(.5);
 }
 
 .fa-chevron-down,
@@ -286,48 +281,61 @@ main {
 .controls__toggleGridlines {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1.2em;
 }
 
 .controls__label {
+  display: flex;
+  align-items: center;
   font-size: 0.9rem;
   font-weight: 500;
+  gap: 1em;
 }
 
-.switch {
-  position: relative;
-  display: inline-block;
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  white-space: nowrap;
+}
 
+.controls__track {
+  display: inline-block;
+  position: relative;
   width: 2.4rem;
   height: 1.2rem;
   background-color: var(--clr-med);
   border-radius: 100px;
 }
 
-.switch::after {
-  content: '';
+.controls__track::after {
+  content: "";
   position: absolute;
-
   width: 1rem;
   height: 1rem;
-  border-radius: 50%;
-  background-color: var(--clr-light);
-
   top: 0.1rem;
   left: 0.1rem;
+  border-radius: 50%;
+  background-color: var(--clr-light);
+  pointer-events: none;
   transition: all 0.3s;
 }
 
-.controls__switch:checked + .switch::after {
+.checkbox:checked + .controls__track::after {
   left: 1.3rem;
 }
 
-.controls__switch:checked + .switch {
+.checkbox:checked ~ .controls__track {
   background-color: var(--clr-highlight);
 }
 
 .controls__switch {
-  /* display: none; */
   position: absolute;
   opacity: 0;
   width: 1px;
@@ -498,7 +506,6 @@ a:hover {
   align-items: center;
   column-gap: 0.5em;
   row-gap: clamp(0.2em, 0.2em + 1vh, 0.6em);
-  
 }
 
 .footer__links {
