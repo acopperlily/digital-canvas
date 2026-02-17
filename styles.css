@@ -125,6 +125,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 80vh;
 }
 
 .main__container {
@@ -419,8 +420,6 @@ a:focus-visible {
               0 0 0 1px var(--clr-highlight);
 }
 
-
-
 .footer__container {
   width: 300px;
   width: clamp(260px, 65%, 100%);
@@ -433,7 +432,8 @@ a:focus-visible {
 }
 
 .footer__portfolio {
-  padding: 0.5em 0.1em;
+  padding: 0.5em 0.25em;
+  margin-left: -0.2em;
 }
 
 .footer__links {
@@ -457,6 +457,8 @@ a:focus-visible {
 
 .footer__icon {
   letter-spacing: normal;
+  font-size: 1.1rem;
+  font-size: clamp(0.8rem, 0.8rem + 1vw, 1.1rem);
 }
 
 #main__grid::selection {
