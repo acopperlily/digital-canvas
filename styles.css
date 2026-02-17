@@ -203,6 +203,10 @@ main {
   gap: 1em;
 }
 
+.slider-size {
+  margin-left: -0.5em;
+}
+
 .controls__toggle {
   position: absolute;
   width: 1px;
@@ -317,10 +321,6 @@ main {
   height: 1rem;
 }
 
-#slider:focus {
-  /* outline: none; */
-}
-
 #slider:focus::-webkit-slider-thumb {
   border: 1px solid var(--clr-light);
   outline: 1px solid var(--clr-highlight);
@@ -403,6 +403,7 @@ a {
   text-decoration: none;
   opacity: 1;
   transition: all 300ms ease-in-out;
+  outline: 1px solid transparent;
 }
 
 a:hover {
