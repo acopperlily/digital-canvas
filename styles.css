@@ -1,3 +1,23 @@
+@font-face {
+  font-family: 'Montserrat';
+  src:
+    url('/assets/fonts/montserrat-regular.woff2') format('woff2'),
+    url('/assets/fonts/montserrat-regular.ttf') format('truetype');
+  font-weight: var(--fw-normal);
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: 
+    url('/assets/fonts/montserrat-medium.woff2') format('woff2'),
+    url('/assets/fonts/montserrat-medium.ttf') format('truetype');
+  font-weight: var(--fw-medium);
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -15,7 +35,7 @@
 
   --ff: 'Montserrat', Arial, sans-serif;
   --fw-normal: 400;
-  --fw-semibold: 500;
+  --fw-medium: 500;
   --ls-narrow: 0.2ch;
   --ls-wide: 0.5ch;
 }
@@ -72,7 +92,7 @@ header {
   font-size: 2rem;
   font-size: clamp(1.5rem, 1.1rem + 1vw, 1.9rem);
   
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-medium);
   letter-spacing: var(--ls-wide);
   line-height: 1.1;
 
@@ -84,7 +104,7 @@ header {
   opacity: 1;
   font-family: var(--ff);
   font-size: 0.9rem;
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-medium);
   text-transform: uppercase;
   letter-spacing: var(--ls-narrow);
   
@@ -137,7 +157,7 @@ main {
   width: clamp(50vw, 100%, 600px);
   height: clamp(50vw, 100%, 600px);
   min-height: 50vh;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1;
 
   margin: 0 auto;
   touch-action: none;
@@ -156,8 +176,6 @@ main {
 .grid__cellContainer {
   background-color: transparent;
   display: flex;
-  justify-content: center;
-  align-items: stretch;
 }
 
 [data-gridlines="true"] {
@@ -193,7 +211,7 @@ main {
   display: flex;
   align-items: center;
   font-size: 0.9rem;
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-medium);
   gap: 1em;
 }
 
@@ -479,6 +497,10 @@ a:focus-visible {
   .main__container {
     flex-direction: row;
     gap: clamp(0.5em, 0.5em + 2vw, 6em);
+  }
+
+  #main__grid {
+    max-height: 96vh;
   }
 
   #main__controls {
