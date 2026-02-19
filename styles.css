@@ -14,6 +14,8 @@
   --br: 1px;
 
   --ff: 'Montserrat', Arial, sans-serif;
+  --fw-normal: 400;
+  --fw-semibold: 500;
   --ls-narrow: 0.2ch;
   --ls-wide: 0.5ch;
 }
@@ -25,8 +27,8 @@ body {
   min-height: 100vh;
 
   font-family: var(--ff);
+  font-weight: var(--fw-normal);
   text-transform: uppercase;
-  letter-spacing: var(--ls-narrow);
 
   display: flex;
   flex-direction: column;
@@ -34,7 +36,7 @@ body {
 
 .container {
   position: relative;
-  width: min(95%, 100em);
+  width: min(95%, 80em);
   max-width: 95%;
   margin-inline: auto;
 }
@@ -63,11 +65,6 @@ header {
 
 .header__container {
   margin-inline: auto;
-  width: min(95%, 100em);
-  max-width: 95%;
-  display: grid;
-  grid-template-columns: 2.5em 1fr 2.5em;
-  align-items: center;
 }
 
 .header__title {
@@ -75,7 +72,7 @@ header {
   font-size: 2rem;
   font-size: clamp(1.5rem, 1.1rem + 1vw, 1.9rem);
   
-  font-weight: 500;
+  font-weight: var(--fw-semibold);
   letter-spacing: var(--ls-wide);
   line-height: 1.1;
 
@@ -87,14 +84,13 @@ header {
   opacity: 1;
   font-family: var(--ff);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: var(--fw-semibold);
   text-transform: uppercase;
   letter-spacing: var(--ls-narrow);
   
   border-radius: var(--br);
   cursor: pointer;
   flex: 1;
-  transition: all 300ms ease-in-out;
 }
 
 .clearBtn {
@@ -106,7 +102,7 @@ header {
   color: var(--clr-light);
 
   border: 2px solid var(--clr-med);
-  min-width: max-content;
+  white-space: nowrap;
 }
 
 .fa-check {
@@ -125,7 +121,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
 }
 
 .main__container {
@@ -141,12 +136,15 @@ main {
   background-color: rgb(255, 255, 255);
   width: clamp(50vw, 100%, 600px);
   height: clamp(50vw, 100%, 600px);
-  aspect-ratio: 1;
+  min-height: 50vh;
+  aspect-ratio: 1 / 1;
 
   margin: 0 auto;
   touch-action: none;
   cursor: pointer;
   display: grid;
+
+  flex: 3;
 }
 
 .cell {
@@ -173,18 +171,15 @@ main {
 
 #main__controls {
   position: relative;
-  margin-block: 0.3em;
-  margin-inline: auto;
-  width: 50%;
   width: min(100%, 600px);
   width: clamp(50vw, 100%, 600px);
   font-size: 0.8rem;
   letter-spacing: 0.1ch;
 
+  flex: 2;
+
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   row-gap: 3em;
 }
 
@@ -192,14 +187,13 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.2em;
 }
 
 .controls__label {
   display: flex;
   align-items: center;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: var(--fw-semibold);
   gap: 1em;
 }
 
@@ -260,7 +254,11 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1.5em;
+  gap: 1em;
+}
+
+.slider-size {
+  width: 7ch;
 }
 
 .slide-container {
@@ -310,6 +308,7 @@ main {
   height: 1rem;
   border-radius: var(--br);
   margin-top: -0.3rem;
+
   /* Center thumb by subtracting half thumb height from half track height */
   margin-top: calc(0.4rem/2 - 1rem/2);
 }
@@ -358,9 +357,8 @@ main {
 
 .controls__buttons {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
   gap: 1.5em;
 }
 
@@ -374,10 +372,10 @@ main {
   opacity: 0.7;
 }
 
-.clearBtn, .saveBtn {
+.clearBtn, 
+.saveBtn {
   width: clamp(140px, 100%, 100%);
   padding-inline: 2em;
-  flex: 1;
   opacity: 1;
   outline: 2px solid transparent;
 }
@@ -415,6 +413,7 @@ a:hover {
 
 a:focus-visible {
   color: var(--clr-highlight);
+
   /* For focus outline */
   box-shadow: 0 0 0 0 var(--clr-dark),
               0 0 0 1px var(--clr-highlight);
@@ -431,9 +430,14 @@ a:focus-visible {
   row-gap: clamp(0.2em, 0.2em + 1vh, 0.6em);
 }
 
+.footer__date {
+  letter-spacing: var(--ls-narrow);
+}
+
 .footer__portfolio {
   padding: 0.5em 0.25em;
   margin-left: -0.2em;
+  letter-spacing: var(--ls-narrow);
 }
 
 .footer__links {
@@ -456,7 +460,6 @@ a:focus-visible {
 }
 
 .footer__icon {
-  letter-spacing: normal;
   font-size: 1.1rem;
   font-size: clamp(0.8rem, 0.8rem + 1vw, 1.1rem);
 }
@@ -472,19 +475,14 @@ a:focus-visible {
 }
 
 @media (orientation: landscape) {
-  .header__container {
-    display: flex;
-    justify-content: space-between;
-  }
 
   .main__container {
     flex-direction: row;
-    justify-content: center;
-    gap: clamp(2em, 2em + 2vw, 10em);
+    gap: clamp(0.5em, 0.5em + 2vw, 6em);
   }
 
   #main__controls {
-    gap: clamp(3em, 3em + 1vw, 8em);
+    gap: clamp(4em, 4em + 3vw, 10em);
   }
 
 }
