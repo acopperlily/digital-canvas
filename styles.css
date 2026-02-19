@@ -33,7 +33,7 @@
 
   --br: 1px;
 
-  --ff: 'Montserrat', Arial, sans-serif;
+  --ff: 'Montserrat', system-ui, Arial, Helvetica, 'Helvetica Neue', sans-serif;
   --fw-normal: 400;
   --fw-medium: 500;
   --ls-narrow: 0.2ch;
@@ -480,6 +480,7 @@ a:focus-visible {
 .footer__icon {
   font-size: 1.1rem;
   font-size: clamp(0.8rem, 0.8rem + 1vw, 1.1rem);
+  fill: var(--clr-light);
 }
 
 #main__grid::selection {
