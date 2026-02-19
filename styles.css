@@ -501,6 +501,7 @@ a:focus-visible {
 
   #main__grid {
     max-height: 96vh;
+    max-height: 96dvh;
   }
 
   #main__controls {
