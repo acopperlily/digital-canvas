@@ -122,13 +122,17 @@ header {
   color: var(--clr-light);
 
   border: 2px solid var(--clr-med);
-  white-space: nowrap;
 }
 
-.fa-check {
-  color: rgb(5, 249, 5);
+.saved-text {
+  display: inline-flex;
+  gap: 0.25em;
+}
+
+.checkmark {
+  fill: rgb(5, 249, 5);
   width: 1rem;
-  margin-left: 0.4em;
+  height: 1rem;
 }
 
 .hidden {

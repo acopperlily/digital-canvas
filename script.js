@@ -108,7 +108,6 @@ const Grid = (() => {
   saveBtn.addEventListener('click', () => {
     const check = document.querySelector('.saved');
     const save = document.querySelector('.save-text');
-    console.log('menu item clicked');
     let savedCanvas = cellArray.getAllCells();
     window.localStorage.setItem('canvas', JSON.stringify(savedCanvas));
 
