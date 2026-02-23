@@ -126,7 +126,7 @@ header {
 
 .saved-text {
   display: inline-flex;
-  gap: 0.25em;
+  gap: 0.5em;
 }
 
 .checkmark {
@@ -434,8 +434,6 @@ a:hover {
 }
 
 a:focus-visible {
-  color: var(--clr-highlight);
-
   /* For focus outline */
   box-shadow: 0 0 0 0 var(--clr-dark),
               0 0 0 1px var(--clr-highlight);
